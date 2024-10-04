@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FlyBookingSystem</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlyBookingSystem.Domain\FlyBookingSystem.Domain.csproj" />
+    <ProjectReference Include="..\FlyBookingSystem.Application.Contracts\FlyBookingSystem.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="8.3.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="8.3.0" />
+  </ItemGroup>
+
+</Project>
