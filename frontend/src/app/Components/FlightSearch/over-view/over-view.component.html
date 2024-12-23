@@ -1,0 +1,35 @@
+<div class="overview-container">
+  <div class="overview-card">
+    <h2>Flight Details</h2>
+    <p><strong>Date:</strong> {{ selectedFlight?.date }}</p>
+    <p><strong>From:</strong> {{ selectedFlight?.from }}</p>
+    <p><strong>To:</strong> {{ selectedFlight?.to }}</p>
+    <p><strong>Departure Time:</strong> {{ selectedFlight?.departureTime }}</p>
+    <p><strong>Arrival Time:</strong> {{ selectedFlight?.arrivalTime }}</p>
+    <p><strong>Duration:</strong> {{ selectedFlight?.duration }}</p>
+    <p><strong>Price:</strong> ${{ selectedFlight?.price }}</p>
+  </div>
+
+  <div class="overview-card">
+    <h2>Fare Selection</h2>
+    <p><strong>Category:</strong> {{ selectedCategory?.name }}</p>
+    <p><strong>Seat:</strong> {{ selectedCategory?.seat }}</p>
+    <p><strong>Bag:</strong> {{ selectedCategory?.bag }}</p>
+    <p><strong>Flexibility:</strong> {{ selectedCategory?.flexibility }}</p>
+    <p><strong>Price:</strong> ${{ selectedCategory?.price }}</p>
+  </div>
+
+  <div class="overview-card">
+    <h2>Extra Services</h2>
+    <p *ngIf="extraServices?.extraLargeBaggage">Extra Large Baggage: Added</p>
+    <p *ngIf="extraServices?.priorityBoarding">Priority Boarding: Added</p>
+    <p *ngIf="!extraServices || (!extraServices.extraLargeBaggage && !extraServices.priorityBoarding)">
+      No Extra Services Selected
+    </p>
+  </div>
+  
+  <!-- Confirm and Pay Button -->
+  <div class="confirm-container">
+    <button (click)="confirmAndPay()" class="confirm-btn">Confirm and Pay</button>
+  </div>
+</div>

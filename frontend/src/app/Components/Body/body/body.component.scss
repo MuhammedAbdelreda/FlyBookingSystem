@@ -1,0 +1,290 @@
+/*
+.hero {
+    position: relative;
+  
+    img {
+      //padding-left: 200px;
+      width: 100%;
+      height: 500px;
+      object-fit:none;
+    }
+  
+    .search-bar {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+  
+      form {
+        display: flex;
+        gap: 10px;
+  
+        input,
+        button {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+  
+        button {
+          background-color: #409680;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+*/
+/*
+.hero {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; // Change from 'none' to 'cover' to ensure proper scaling and aspect ratio
+    border-radius: 10px; // Add border-radius to round corners
+    display: block; // Ensure that the image does not have extra space around it
+    margin: 0 auto; // Center the image horizontally
+  }
+
+  .search-bar {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+
+    form {
+      display: flex;
+      gap: 10px;
+
+      input,
+      button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #409680;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+  .popular-routes {
+    padding: 40px;
+    text-align: center;
+  
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+  
+      .route-card {
+        img {
+          height: 350px;
+          width: 300px;
+          border-radius: 10px;
+        }
+  
+        h3 {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      /* Enhanced Fading effect around the image (top and bottom) */
+      box-shadow: inset 0 100px 100px rgba(255, 255, 255, 0.8), inset 0 -100px 100px rgba(255, 255, 255, 0.8);
+    }
+
+    .overlay-content {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      .explore-flights-btn {
+        background: linear-gradient(135deg, #4eb698 0%, #4eb698 40%, #4eb698 80%, #4eb698 100%);
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.5em;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease, box-shadow 0.3s ease;
+        display: inline-flex;
+        width: auto; /* More responsive */
+        border: none;
+        letter-spacing: 0.5px; /* Slight spacing between letters for a refined look */
+        text-transform: uppercase; /* Make text uppercase for a modern style */
+
+        &:hover {
+          background: linear-gradient(135deg, #36806d 0%, #36806d 40%, #36806d 100%);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* Responsive Design for different screen sizes */
+  @media (max-width: 1200px) {
+    .hero-container {
+      .overlay-content {
+        .explore-flights-btn {
+          font-size: 1.4em;
+          padding: 14px 28px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    height: 80vh; /* Adjust hero height for tablets */
+    .hero-container {
+      .overlay-content {
+        .explore-flights-btn {
+          font-size: 1.3em;
+          padding: 12px 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 70vh; /* Adjust hero height for smaller devices */
+    .hero-container {
+      .overlay-content {
+        .explore-flights-btn {
+          font-size: 1.2em;
+          padding: 10px 22px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    height: 60vh; /* Adjust hero height for mobile */
+    .hero-container {
+      .overlay-content {
+        .explore-flights-btn {
+          font-size: 1.1em;
+          padding: 8px 18px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.popular-routes {
+  padding: 40px;
+  text-align: center;
+  background-color: #f8f9fa; // Light background for contrast
+  border-radius: 10px; // Rounded corners for section
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; // Darker color for the heading
+  }
+
+  .routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+    .route-card {
+      border-radius: 10px;
+      overflow: hidden; // Ensure images are clipped within rounded corners
+      transition: transform 0.3s ease, box-shadow 0.3s ease; // Smooth transitions for hover effects
+
+      &:hover {
+        transform: scale(1.05); // Slightly enlarge on hover
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Enhance shadow on hover
+      }
+
+      img {
+        width: 75%;
+        height: 400px; // Maintain aspect ratio of images
+        border-radius: 10px;
+        transition: opacity 0.3s ease; // Smooth opacity transition
+      }
+
+      h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        color: #333; // Darker color for the text
+      }
+    }
+  }
+}
+
+  /*.info-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f1f1f1;
+  
+    .icon-block {
+      text-align: center;
+  
+      h3 {
+        margin-top: 10px;
+      }
+    }
+  }
+  
+  .promo {
+    padding: 40px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+  
+    img {
+      margin: 20px 0;
+      width: 200px;
+    }
+  
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }*/
+  

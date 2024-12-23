@@ -1,0 +1,372 @@
+/*.search-container {
+    display: flex;
+    padding: 20px;
+  
+    .search-filter {
+      flex: 1;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+  
+      h3 {
+        margin-bottom: 15px;
+      }
+  
+      .search-box {
+        margin-bottom: 30px;
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+  
+        input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+  
+        .change-search-btn {
+          background-color: #007bff;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+        }
+      }
+  
+      .filter-options {
+        .filter-group {
+          margin-bottom: 20px;
+  
+          h4 {
+            margin-bottom: 10px;
+          }
+  
+          input[type="checkbox"] {
+            margin-right: 10px;
+          }
+  
+          input[type="range"] {
+            width: 100%;
+          }
+  
+          .price-range {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  
+    .search-results {
+      flex: 3;
+      margin-left: 20px;
+  
+      .result-header {
+        margin-bottom: 20px;
+        text-align: right;
+      }
+  
+      .flight-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        .flight-info {
+          flex: 3;
+  
+          p {
+            margin: 5px 0;
+          }
+  
+          .plane-icon {
+            font-size: 18px;
+            color: #f39c12;
+          }
+        }
+  
+        .flight-price {
+          flex: 1;
+          text-align: right;
+  
+          p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+  
+          button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }*/
+ .search-container {
+    display: flex;
+    padding: 20px;
+  
+    .search-filter {
+      flex: 1;
+      background: linear-gradient(to bottom, #ffffff, #f7f7f7);  // White gradient background
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  // Adding a subtle shadow for depth
+  
+      h3 {
+        margin-bottom: 15px;
+      }
+  
+      .search-box {
+        margin-bottom: 30px;
+  
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+  
+        input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #ffffff;  // Keep input background white
+        }
+  
+        .change-search-btn {
+          background-color: #409680;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+          transition: background-color 0.3s ease;  // Smooth transition on hover
+  
+          &:hover {
+            background-color: darken(#36806d, 10%);
+          }
+        }
+      }
+  
+      .filter-options {
+        .filter-group {
+          margin-bottom: 20px;
+  
+          h4 {
+            margin-bottom: 10px;
+          }
+  
+          input[type="checkbox"] {
+            margin-right: 10px;
+          }
+  
+          input[type="range"] {
+            width: 100%;
+          }
+  
+          .price-range {
+            display: flex;
+            justify-content: space-between;
+          }
+          accent-color:#409680;
+        }
+      }
+    }
+    .sorted-by{
+      opacity: 0.5;
+      font-size:larger;
+    }
+  
+    .search-results {
+      flex: 3;
+      margin-left: 20px;
+      background: linear-gradient(to bottom, #ffffff, #f7f7f7);  // White gradient background for search results
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  // Adding shadow for a floating effect
+  
+      .result-header {
+        margin-bottom: 20px;
+        text-align: right;
+      }
+  
+      .flight-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #ffffff;  // White card background
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;  // Add smooth hover effects
+  
+        &:hover {
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+          transform: translateY(-3px);  // Slight lift on hover
+        }
+  
+        .flight-info {
+          flex: 3;
+  
+          p {
+            margin: 5px 0;
+          }
+  
+          .plane-icon {
+            font-size: 18px;
+            color: #f39c12;
+          }
+        }
+  
+        .flight-price {
+          flex: 1;
+          text-align: right;
+  
+          p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+  
+          button {
+            background-color: #409680;
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;  // Smooth transition for button hover
+  
+            &:hover {
+              background-color: darken(#36806d, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
+  .flight-details-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    max-width: 500px; /* Set a max-width to avoid too wide card */
+    width: 100%;
+  
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      padding: 16px;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 12px;
+    }
+  
+    h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+  
+    p {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #555;
+    }
+  
+    button {
+      margin-top: 20px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      
+      &:hover {
+        transform: translateY(-2px);
+      }
+  
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  
+    .book-now-btn {
+      background-color: #409680;
+      color: white;
+  
+      &:hover {
+        background-color: #409680;
+      }
+  
+      &:active {
+        background-color: #409680;
+      }
+  
+      margin-left:140px; /* Space between the buttons */
+      
+    }
+  
+    .close-btn {
+      background-color: #dc3545;
+      color: white;
+  
+      &:hover {
+        background-color: #c82333;
+      }
+  
+      &:active {
+        background-color: #bd2130;
+      }
+    }
+  
+    // Ensures buttons are displayed in a row with spacing
+    .button-group {
+      display: flex;
+      gap: 10px; /* Space between buttons */
+      margin-top: 20px;
+    }
+  }
+  
+  // Optional: Adding a smooth shadow effect on hover
+  .flight-details-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  

@@ -1,0 +1,111 @@
+.extra-services {
+    max-width: 100%; // Ensure the container fits the page width
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #f9f9f9, #ffffff); // White gradient background
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  
+    h3 {
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 2rem; // Larger font size for better visibility
+      font-weight: 700;
+    }
+  
+    .card-container {
+      display: flex;
+      justify-content:space-evenly; // Distribute space between cards
+      flex-wrap: nowrap; // Prevent wrapping
+      overflow-x: auto; // Allow horizontal scrolling if needed
+      //gap: 10px; // Increased space between cards
+  
+      .card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 300px; // Increased width for larger cards
+        height: 400px; // Fixed height to maintain card aspect ratio
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        display: flex;
+        flex-direction: column; // Ensure button stays at the bottom
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  
+        img {
+          width: 100%;
+          height: 150px; // Larger image height
+          border-bottom: 1px solid #ddd;
+          object-fit: cover;
+          transition: opacity 0.3s ease;
+        }
+  
+        h4 {
+          margin: 1rem 0 0.5rem;
+          color: #333;
+          font-size: 1.6rem; // Larger font size for headings
+        }
+  
+        p {
+          margin: 0.5rem 0 1rem;
+          color: #555;
+          flex-grow: 1; // Push the button to the bottom
+          font-size: 1.2rem; // Larger font size for better readability
+        }
+  
+        button {
+          background-color: #409680;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          padding: 1rem; // Larger padding for a bigger button
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+          margin-top: auto; // Position button at the bottom of the card
+  
+          &:hover {
+            background-color: #36806d;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+  
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  
+    // Media queries for responsive design
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column; // Stack cards vertically on smaller screens
+        align-items: center;
+        overflow-x: visible; // Disable horizontal scrolling on smaller screens
+      }
+  
+      .card {
+        width: 100%;
+        max-width: 90%; // Adjust max-width for better fit on smaller screens
+      }
+    }
+  
+    // Animation for fading in the container
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    // Apply fade-in animation
+    animation: fadeIn 1s ease-in-out;
+  }
+  

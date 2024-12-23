@@ -1,0 +1,64 @@
+<section class="search-container">
+  <aside class="search-filter">
+    <h3>Your Search</h3>
+    <div class="search-box">
+      <!-- Existing Search Fields -->
+      <label for="from">From</label>
+      <input type="text" id="from" placeholder="From" [(ngModel)]="searchTerm.from">
+      
+      <label for="to">To</label>
+      <input type="text" id="to" placeholder="To" [(ngModel)]="searchTerm.to">
+      
+      <label for="departure">Departure</label>
+      <input type="date" id="departure" [(ngModel)]="searchTerm.departureDate">
+
+      <label for="price">Max Price</label>
+      <input type="number" id="price" placeholder="Max Price" [(ngModel)]="searchTerm.maxPrice">
+
+      <label for="duration">Max Duration (hours)</label>
+      <input type="number" id="duration" placeholder="Max Duration" [(ngModel)]="searchTerm.maxDuration">
+
+      <button class="change-search-btn">Change Search</button>
+    </div>
+
+    <!-- Search Settings -->
+    <!-- Existing Filter Options -->
+  </aside>
+
+  <main class="search-results">
+    <div class="result-header">
+      <h3 class="sorted-by">Sort by: Lowest Price</h3>
+    </div>
+
+    <!-- Flight Cards -->
+    <div *ngIf="filteredFlights().length > 0">
+      <div *ngFor="let flight of filteredFlights()" class="flight-card">
+        <div class="flight-info">
+          <p><strong>{{ flight.date }} - Departure</strong></p>
+          <p>{{ flight.departureTime }} <span class="plane-icon">✈</span> {{ flight.arrivalTime }} ({{ flight.duration }})</p>
+          <p>{{ flight.from }} to {{ flight.to }}</p>
+        </div>
+        <div class="flight-price">
+          <p>\${{ flight.price }}</p>
+          <button (click)="selectFlight(flight)">Flight details</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flight Details Card with Overlay -->
+    <div *ngIf="selectedFlight" class="overlay">
+      <div class="flight-details-card">
+        <h3>Flight Details</h3>
+        <p><strong>Date:</strong> {{ selectedFlight.date }}</p>
+        <p><strong>Departure Time:</strong> {{ selectedFlight.departureTime }}</p>
+        <p><strong>Arrival Time:</strong> {{ selectedFlight.arrivalTime }}</p>
+        <p><strong>Duration:</strong> {{ selectedFlight.duration }}</p>
+        <p><strong>From:</strong> {{ selectedFlight.from }}</p>
+        <p><strong>To:</strong> {{ selectedFlight.to }}</p>
+        <p><strong>Price:</strong> \${{ selectedFlight.price }}</p>
+        <button (click)="selectedFlight = null">Close Details</button>
+        <button (click)="bookFlight(selectedFlight)" class="book-now-btn">Book Now - \${{ selectedFlight.price }}</button>
+      </div>
+    </div>
+  </main>
+</section>

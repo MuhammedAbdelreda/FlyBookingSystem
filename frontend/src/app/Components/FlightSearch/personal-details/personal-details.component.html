@@ -1,0 +1,71 @@
+<section class="personal-details">
+  <h3>Enter Passenger Details</h3>
+
+  <form [formGroup]="passengerForm" (ngSubmit)="onSubmit()">
+    <!-- Passenger Name -->
+    <label for="name">Passenger Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+    <div *ngIf="passengerForm.get('name')?.invalid && (passengerForm.get('name')?.touched || passengerForm.get('name')?.dirty)">
+      <div *ngIf="passengerForm.get('name')?.errors?.['required']">
+        Passenger Name is required.
+      </div>
+    </div>
+
+    <!-- Email Address -->
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" formControlName="email" required>
+    <div *ngIf="passengerForm.get('email')?.invalid && (passengerForm.get('email')?.touched || passengerForm.get('email')?.dirty)">
+      <div *ngIf="passengerForm.get('email')?.errors?.['required']">
+        Email Address is required.
+      </div>
+      <div *ngIf="passengerForm.get('email')?.errors?.['email']">
+        Please enter a valid email address.
+      </div>
+    </div>
+
+    <!-- Phone Number -->
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" formControlName="phone" required>
+    <div *ngIf="passengerForm.get('phone')?.invalid && (passengerForm.get('phone')?.touched || passengerForm.get('phone')?.dirty)">
+      <div *ngIf="passengerForm.get('phone')?.errors?.['required']">
+        Phone Number is required.
+      </div>
+    </div>
+
+    <!-- Nationality -->
+    <label for="nationality">Nationality:</label>
+    <input type="text" id="nationality" formControlName="nationality" required>
+    <div *ngIf="passengerForm.get('nationality')?.invalid && (passengerForm.get('nationality')?.touched || passengerForm.get('nationality')?.dirty)">
+      <div *ngIf="passengerForm.get('nationality')?.errors?.['required']">
+        Nationality is required.
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" formControlName="dob" required>
+    <div *ngIf="passengerForm.get('dob')?.invalid && (passengerForm.get('dob')?.touched || passengerForm.get('dob')?.dirty)">
+      <div *ngIf="passengerForm.get('dob')?.errors?.['required']">
+        Date of Birth is required.
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="gender-section">
+      <label>Gender:</label>
+      <div class="radio-container">
+        <input type="radio" id="male" formControlName="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" formControlName="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+    </div>
+    <div *ngIf="passengerForm.get('gender')?.invalid && (passengerForm.get('gender')?.touched || passengerForm.get('gender')?.dirty)">
+      <div *ngIf="passengerForm.get('gender')?.errors?.['required']">
+        Gender selection is required.
+      </div>
+    </div>
+
+    <button type="submit">Continue</button>
+  </form>
+</section>

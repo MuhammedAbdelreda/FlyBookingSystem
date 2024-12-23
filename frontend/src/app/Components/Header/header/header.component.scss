@@ -1,0 +1,121 @@
+/*.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    //background-color: #fafafa;
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #409680;
+    }
+  
+    nav ul {
+      display: flex;
+      list-style: none;
+  
+      li {
+        margin-left: 20px;
+  
+        a {
+          text-decoration: none;
+          color: #333;
+          padding: 5px 10px;
+        }
+  
+        .login {
+          background-color: #333;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }*/
+  header {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      height: 80px;
+      background-color: #ffffff; // Add background color for clarity
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add subtle shadow for depth
+  
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #409680;
+        letter-spacing: 1px; // Add spacing for a more modern look
+      }
+  
+      nav {
+        ul {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+  
+          li {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+  
+            a {
+              text-decoration: none;
+              color: #333;
+              padding: 5px 10px;
+              display: flex;
+              align-items: center;
+              transition: color 0.3s, background-color 0.3s; // Smooth transition
+  
+              img {
+                margin-right: 8px; // Space between icon and text
+              }
+  
+              &:hover {
+                color: #409680; // Change text color on hover
+              }
+            }
+  
+            .login {
+              background-color: #333;
+              color: #fff;
+              padding: 10px 20px;
+              border-radius: 5px;
+              font-weight: bold;
+              transition: background-color 0.3s; // Smooth transition for background color
+  
+              &:hover {
+                background-color: #555; // Darken background on hover
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsive design for smaller screens
+  @media (max-width: 768px) {
+    header {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+  
+        nav ul {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+  
+          li {
+            margin-left: 0;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  
